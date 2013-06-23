@@ -5,6 +5,9 @@
             [sitemap.core :as sitemap]
             [os.hashobject.views.index :as index-view]))
 
+()
+
+(def projects ["translate" "sitemap" "rsa-signer"])
 
 (def sources-dir (file "./resources/posts/"))
 
@@ -48,7 +51,10 @@
    (post-view/index metadata (:content metadata))))
 
 (defn original-md-to-html-str [file]
-  (markdown/md-to-html-string (slurp (str "./resources/posts/" file))))
+  (markdown/md-to-html-string (slurp file)))
+
+
+(original-md-to-html-str "./sitemap/doc/intro.md")
 
 (defn process-post [file]
   (let [post (post-to-clj file)
