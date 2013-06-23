@@ -1,0 +1,9 @@
+[submodule "sitemap"]
+	path = sitemap
+	url = git@github.com:hashobject/sitemap.git
+[submodule "translate"]
+	path = translate
+	url = git@github.com:hashobject/translate.git
+[submodule "rsa-signer"]
+	path = rsa-signer
+	url = git@github.com:hashobject/rsa-signer.git
