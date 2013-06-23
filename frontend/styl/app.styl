@@ -1,0 +1,138 @@
+@import "normalize.min.css"
+@import "foundation.min.css"
+@import "font-awesome.css"
+
+
+$text-color = black;
+$link-color = #eb4d94;
+$visited-link-color = #9e0047;
+$code-color = #99eb52;
+$code-background = #3a434a;
+$header-color = #1cb8e8;
+$quote-background = #e8eaeb;
+
+
+body
+  font-size: 14px;
+  line-height: 1.4;
+  color: black;
+  font-family: 'PT Sans', Tahoma, sans-serif;
+  color: $text-color;
+
+img.logo
+  margin: 5px 0;
+  background-image: url('/images/hashobject-logo.png');
+  width: 157px;
+  height: 53px;
+
+
+body > header.row
+  height: 63px;
+  margin-bottom: 30px;
+  & > .content
+    width: 900px;
+  & nav
+    float: right;
+    & ul
+      & li
+        display: inline-block;
+        text-transform: uppercase;
+        list-style-type: none;
+        margin: 10px 20px;
+        & a
+        & a:visited
+          color: black!important;
+          font-weight: bold;
+          font-size: 18px;
+          line-height: 1.2;
+
+body > footer.row
+  & p.licence
+    font-style: italic;
+    color: $code-background;
+    margin: 0 12px 20px;
+
+.row > .content
+  width: 600px;
+  margin: 0 auto;
+  position: relative;
+
+  & a
+    color: $link-color;
+    &:visited
+      color: $visited-link-color;
+
+aside.post-metadata
+  position: absolute;
+  width: 95px;
+  left: -105px;
+  text-align: right;
+  & img.avatar
+    border-radius: 25px;
+    width: 50px;
+  & a
+  & span
+    display: block;
+    &.meta-label
+      margin-top: 10px;
+
+article.post-content
+  & h1
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 1.2;
+    text-transform: uppercase;
+
+  & h2
+    margin-top: 35px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 1.2;
+    color: $header-color;
+  & ul
+    list-style-position: inside;
+
+  & code
+  & pre[class="brush: clojure"]
+    font-family: Courier, monospace;
+    font-weight: bold;
+    color: $code-color;
+    background-color: $code-background;
+    display: block;
+    margin: 15px;
+    padding: 10px 15px;
+
+  & pre
+    font-family: Courier, monospace;
+    font-weight: bold;
+    color: $code-color;
+
+  & p
+    margin-top: 0;
+    margin-bottom: 7px;
+
+  & p.discussion-link
+    margin-top: 20px;
+    font-style: italic;
+    color: $code-background;
+
+  & ul
+    color: $code-background;
+    margin-left: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+  & blockquote
+    border-left: 5px solid $link-color;
+    background-color: $quote-background;
+    font-style: italic;
+    margin: 15px 0;
+    padding: 15px 30px;
+    & p
+      margin: 0;
+      padding: 0;
+
+ul.posts
+  & li.post
+    list-style: none;

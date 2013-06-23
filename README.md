@@ -1,6 +1,6 @@
 # os.hashobject.com
 
-HashObject team site with OpenSource projects.
+HashObject team open source corner.
 
 
 ## Content License
