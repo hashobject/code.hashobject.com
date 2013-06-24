@@ -9,14 +9,14 @@
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-41533076-3', 'os.hashobject.com');
+  ga('create', 'UA-41533076-3', 'hashobject.com');
   ga('send', 'pageview');"])
 
 
 (defn header []
   [:header.row
    [:div.content
-    [:a {:href "http://os.hashobject.com"}[:img.logo]]
+    [:a {:href "http://os.hashobject.com"}[:div.logo]]
     [:nav {:role "navigation"}
      [:ul
       [:li [:a {:href "http://hashobject.com"} "Home"]]
