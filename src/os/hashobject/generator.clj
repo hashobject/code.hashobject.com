@@ -13,7 +13,7 @@
   (into []
         (markdown-parser/to-clj
           (markdown-parser/mp
-            (slurp (str "./" project-name "/doc/into.md"))))))
+            (slurp (str "./" project-name "/README.md"))))))
 
 (defn trim-if-not-nil [s]
   (if (clojure.string/blank? s)
@@ -28,7 +28,7 @@
    (project-view/index metadata (:content metadata))))
 
 (defn original-md-to-html-str [project-name]
-  (markdown/md-to-html-string (slurp (str "./" project-name "/doc/intro.md"))))
+  (markdown/md-to-html-string (slurp (str "./" project-name "/README.md"))))
 
 
 (defn process-project [project-name]

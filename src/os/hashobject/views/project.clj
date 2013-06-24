@@ -17,6 +17,6 @@
      (common/header)
      [:div.row
        [:div.content
-       (str content)
-        ]]
+        [:article.docs-content.columns.large-12
+          (str content)]]]
      (common/footer)]))

@@ -5,7 +5,16 @@
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-41533076-3', 'os.hashobject.com');
-  ga('send', 'pageview');</script></head><body><header class="row"><div class="content"><a href="http://os.hashobject.com"><img class="logo"></a><nav role="navigation"><ul><li><a href="http://hashobject.com">Home</a></li><li><a href="http://blog.hashobject.com">Blog</a></li></ul></nav></div></header><div class="row"><div class="content"><h1>Introduction to translate</h1><p>TODO: write <a href='http://jacobian.org/writing/great-documentation/what-to-write/'>great documentation</a></p></div></div><footer class="row"><div class="content"><p class="licence">Except as otherwise noted, the content of this site is licensed
+  ga('send', 'pageview');</script></head><body><header class="row"><div class="content"><a href="http://os.hashobject.com"><img class="logo"></a><nav role="navigation"><ul><li><a href="http://hashobject.com">Home</a></li><li><a href="http://blog.hashobject.com">Blog</a></li></ul></nav></div></header><div class="row"><div class="content"><article class="docs-content columns large-12"><h1>translate</h1><p>A Clojure library designed to translate text from one language to another using various web APIs.</p><p>Initially Google Translate v2 API is implemented.</p><h2>Install</h2><pre>
+&#91;translate &quot;0.3.2&quot;&#93;
+</pre><h2>Usage</h2><pre>
+user=&gt; &#40;use 'translate.google&#41;
+nil
+user=&gt; &#40;translate &quot;Hello&quot; {:key &quot;your google translate key&quot;
+                           :source &quot;en&quot;
+                           :target &quot;es&quot;}&#41;
+&quot;¡Hola&quot;
+</pre><h2>Tips</h2><p>If you need to get API key for Google Translate API you should visit <a href='https://code.google.com/apis/console/'>Google API console</a>.</p><h2>License</h2><p>Copyright © 2013 HashObject Ltd (team@hashobject.com).</p><p>The use and distribution terms for this software are covered by the Eclipse Public License 1.0 (http://opensource.org/licenses/eclipse-1.0) which can be found in the file epl-v10.html at the root of this distribution.</p><p>By using this software in any fashion, you are agreeing to be bound by the terms of this license.</p><p>You must not remove this notice, or any other, from this software.</p></article></div></div><footer class="row"><div class="content"><p class="licence">Except as otherwise noted, the content of this site is licensed
      under the <a href='http://creativecommons.org/licenses/by/3.0/'>Creative Commons Attribution 3.0 License</a>,
      and code samples and library code are licensed under the
      Eclipse Public License 1.0 (http://opensource.org/licenses/eclipse-1.0).</p></div></footer></body></html>
