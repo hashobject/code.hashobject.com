@@ -5,7 +5,7 @@
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-41533076-3', 'os.hashobject.com');
-  ga('send', 'pageview');</script></head><body><header class="row"><div class="content"><a href="http://os.hashobject.com"><img class="logo"></a><nav role="navigation"><ul><li><a href="http://hashobject.com">Home</a></li><li><a href="http://blog.hashobject.com">Blog</a></li></ul></nav></div></header><div class="row"><div class="content"><article class="docs-content columns large-12"><h1>sitemap</h1><p>Clojure library for generating sitemaps.</p><p><a href='https://travis-ci.org/hashobject/sitemap'><img src="https://travis-ci.org/hashobject/sitemap.png" alt="Build Status" /></a></p><p>Sitemaps XML format described on <a href='http://www.sitemaps.org/protocol.html'>http://www.sitemaps.org/</a>.</p><p>Sitemap library accepts Clojure datastructure and produces sitemap XML as string.</p><p>Optionally sitemap XML can be saved to file using provided path.</p><p>Input data structure should be in the following format:</p><pre>
+  ga('send', 'pageview');</script></head><body><header class="row"><div class="content"><a href="http://os.hashobject.com"><img class="logo"></a><nav role="navigation"><ul><li><a href="http://hashobject.com">Home</a></li><li><a href="http://blog.hashobject.com">Blog</a></li></ul></nav></div></header><div class="row"><div class="content"><article class="docs-content columns large-12"><h1>sitemap</h1><p>Clojure library for generating sitemaps.</p><p><a href='https://travis-ci.org/hashobject/sitemap'><img src="https://travis-ci.org/hashobject/sitemap.png" alt="Build Status" /></a></p><p>Sitemaps XML format described on <a href='http://www.sitemaps.org/protocol.html'>http://www.sitemaps.org/</a>.</p><p>Sitemap library accepts Clojure datastructure and produces sitemap XML as string.</p><p>Optionally sitemap XML can be saved to file using provided path.</p><p>Input data structure should be in the following format:</p><pre class="brush: clojure">
 &#91;
   {:loc &quot;http://hashobject.com/about&quot;
    :lastmod &quot;2013-05-31&quot;
@@ -15,9 +15,9 @@
    :lastmod &quot;2013-06-01&quot;
    :changefreq &quot;monthly&quot;
    :priority &quot;0.9&quot;}&#93;
-</pre><p>So it should be sequence of hash maps. Each map should have following keys: <code>loc</code>, <code>lastmod</code>, <code>changefreq</code>, <code>priority</code>. Only <code>loc</code> key is mandatory.</p><p>Please refer to documentation for values' formats of each key.</p><p><h2>Install</h2></p><pre>
+</pre><p>So it should be sequence of hash maps. Each map should have following keys:</p><ul><li>loc - url to the page</li><li>lastmod - date when page was modified in YYYY-MM-DD format</li><li>changefreq - how often page content will be changed (daily, weekly, monthly, never)</li><li>priority - what is the priority of this page on the site (from 0 to 1)<p></li></ul>Note that only 'loc' key is mandatory.</p><p>Please refer to documentation for values' formats of each key.</p><p><h2>Install</h2></p><pre class="brush: shell">
 &#91;sitemap &quot;0.2.0&quot;&#93;
-</pre><h2>Usage</h2><pre>
+</pre><h2>Usage</h2><pre class="brush: shell">
 user=&gt; &#40;use 'sitemap.core&#41;
 nil
 user=&gt; &#40;generate-sitemap &#91;{:loc &quot;http://hashobject.com/about&quot;
@@ -28,8 +28,22 @@ user=&gt; &#40;generate-sitemap &#91;{:loc &quot;http://hashobject.com/about&quo
                          :lastmod &quot;2013-06-01&quot;
                          :changefreq &quot;monthly&quot;
                          :priority &quot;0.9&quot;}&#93;&#41;
-&quot;&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;UTF-8\&quot;?&gt;\n&lt;urlset xmlns=\&quot;http://www.sitemaps.org/schemas/sitemap/0.9\&quot;&gt;&lt;url&gt;&lt;loc&gt;http://hashobject.com/about&lt;/loc&gt;&lt;lastmod&gt;2013-05-31&lt;/lastmod&gt;&lt;changefreq&gt;monthly&lt;/changefreq&gt;&lt;priority&gt;0.8&lt;/priority&gt;&lt;/url&gt;&lt;url&gt;&lt;loc&gt;http://hashobject.com/team&lt;/loc&gt;&lt;lastmod&gt;2013-06-01&lt;/lastmod&gt;&lt;changefreq&gt;monthly&lt;/changefreq&gt;&lt;priority&gt;0.9&lt;/priority&gt;&lt;/url&gt;&lt;/urlset&gt;&quot;
-</pre><h2>Tips</h2><p>We recommend you validate sitemap before submitting it to Google Webmaster tools. There are plenty of online validators.</p><p><h2>License</h2></p><p>Copyright © 2013 HashObject Ltd (team@hashobject.com).</p><p>The use and distribution terms for this software are covered by the Eclipse Public License 1.0 (http://opensource.org/licenses/eclipse-1.0) which can be found in the file epl-v10.html at the root of this distribution.</p><p>By using this software in any fashion, you are agreeing to be bound by the terms of this license.</p><p>You must not remove this notice, or any other, from this software.</p></article></div></div><footer class="row"><div class="content"><p class="licence">Except as otherwise noted, the content of this site is licensed
+&quot;&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;UTF-8\&quot;?&gt;
+&lt;urlset xmlns=\&quot;http://www.sitemaps.org/schemas/sitemap/0.9\&quot;&gt;
+  &lt;url&gt;
+    &lt;loc&gt;http://hashobject.com/about&lt;/loc&gt;
+    &lt;lastmod&gt;2013-05-31&lt;/lastmod&gt;
+    &lt;changefreq&gt;monthly&lt;/changefreq&gt;
+    &lt;priority&gt;0.8&lt;/priority&gt;
+  &lt;/url&gt;
+  &lt;url&gt;
+    &lt;loc&gt;http://hashobject.com/team&lt;/loc&gt;
+    &lt;lastmod&gt;2013-06-01&lt;/lastmod&gt;
+    &lt;changefreq&gt;monthly&lt;/changefreq&gt;
+    &lt;priority&gt;0.9&lt;/priority&gt;
+  &lt;/url&gt;
+&lt;/urlset&gt;&quot;
+</pre><h2>Tips</h2><p>We recommend you to validate sitemap before submitting it to Google Webmaster tools. There are plenty of online validators. Maybe we will later add validation support to this library.</p><h2>Contributions</h2><p>We love contributions. Please submit your pull requests.</p><p><h2>License</h2></p><p>Copyright © 2013 HashObject Ltd (team@hashobject.com).</p><p>The use and distribution terms for this software are covered by the Eclipse Public License 1.0 (http://opensource.org/licenses/eclipse-1.0) which can be found in the file epl-v10.html at the root of this distribution.</p><p>By using this software in any fashion, you are agreeing to be bound by the terms of this license.</p><p>You must not remove this notice, or any other, from this software.</p></article></div></div><footer class="row"><div class="content"><p class="licence">Except as otherwise noted, the content of this site is licensed
      under the <a href='http://creativecommons.org/licenses/by/3.0/'>Creative Commons Attribution 3.0 License</a>,
      and code samples and library code are licensed under the
-     Eclipse Public License 1.0 (http://opensource.org/licenses/eclipse-1.0).</p></div></footer></body></html>
+     <a href='http://opensource.org/licenses/eclipse-1.0'>Eclipse Public License 1.0</a>.</p></div></footer></body></html>

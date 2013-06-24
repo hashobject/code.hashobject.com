@@ -7,13 +7,14 @@ HashObject team open source corner.
 
 Except as otherwise noted, the content of this [site](http://os.hashobject.com)
 is licensed under the [Creative Commons Attribution 3.0 License](http://creativecommons.org/licenses/by/3.0/),
-and code samples are licensed under the MIT License.
+and code samples are licensed under the [Eclipse Public License 1.0](http://opensource.org/licenses/eclipse-1.0).
 
-## Code License
+## License
 
 Copyright © 2013 HashObject Ltd (team@hashobject.com).
 
-The use and distribution terms for this software are covered by the Eclipse Public License 1.0 (http://opensource.org/licenses/eclipse-1.0) which can be found in the file epl-v10.html at the root of this distribution.
+The use and distribution terms for this software are covered by the [Eclipse Public License 1.0](http://opensource.org/licenses/eclipse-1.0)
+which can be found in the file epl-v10.html at the root of this distribution.
 
 By using this software in any fashion, you are agreeing to be bound by the terms of this license.
 
