@@ -26,4 +26,6 @@
   [:footer.row
    [:div.content
     [:p.licence "Except as otherwise noted, the content of this site is licensed
-     under the <a href='http://creativecommons.org/licenses/by/3.0/'>Creative Commons Attribution 3.0 License</a>, and code samples are licensed under the MIT License."]]])
+     under the <a href='http://creativecommons.org/licenses/by/3.0/'>Creative Commons Attribution 3.0 License</a>,
+     and code samples and library code are licensed under the
+     Eclipse Public License 1.0 (http://opensource.org/licenses/eclipse-1.0)."]]])

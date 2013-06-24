@@ -6,10 +6,7 @@
 
 
 (defn render-project [project]
-  [:li.post {:itemprop "blogPost" :itemscope "" :itemtype "http://schema.org/BlogPosting"}
-   [:meta {:itemprop "author" :content (str (get post "author") " (" (get post "author_email") ")" )}]
-   [:a {:href (str (:filename post) ".html") :itemprop "name"} (get post "name")]
-   [:p {:itemprop "description"} (get post "description")]])
+  [:li.project (:name project)])
 
 
 (defn index [projects]

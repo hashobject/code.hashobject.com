@@ -12,7 +12,7 @@
             [lein-sitemap "0.1.0"]]
   :sitemaps ["http://os.hashobject.com/sitemap.xml"]
   :aliases {"index-html" ["trampoline" "run" "-m" "os.hashobject.generator/generate-index"]
-            "posts-html" ["trampoline" "run" "-m" "os.hashobject.generator/generate-projects"]
+            "projects-html" ["trampoline" "run" "-m" "os.hashobject.generator/generate-projects"]
             "sitemap-xml" ["trampoline" "run" "-m" "os.hashobject.generator/generate-sitemap"]
             "site-build" ["shell" "./frontend/node_modules/grunt-cli/bin/grunt" "--gruntfile" "frontend/Gruntfile.js" "build"]
             "site-deploy" ["shell" "./frontend/node_modules/grunt-cli/bin/grunt" "--gruntfile" "frontend/Gruntfile.js" "deploy"]})
