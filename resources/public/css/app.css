@@ -547,7 +547,7 @@ body > header.row > .content{width:700px}
 body > header.row nav{position:absolute;right:0;top:0;}
 body > header.row nav ul li{display:inline-block;text-transform:uppercase;list-style-type:none;margin:10px 20px;}
 body > header.row nav ul li a,body > header.row nav ul li a:visited{color:#000 !important;font-weight:bold;font-size:18px;line-height:1.2}
-body > footer.row p.licence{font-style:italic;color:#3a434a;margin:0 12px 20px}
+body > footer.row p.licence{font-style:italic;color:#3a434a;margin:35px 12px 20px}
 .row > .content{width:600px;margin:0 auto;position:relative;}
 .row > .content a{color:#eb4d94;}
 .row > .content a:visited{color:#9e0047}

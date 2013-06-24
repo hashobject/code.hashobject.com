@@ -20,7 +20,8 @@
     [:nav {:role "navigation"}
      [:ul
       [:li [:a {:href "http://hashobject.com"} "Home"]]
-      [:li [:a {:href "http://blog.hashobject.com"} "Blog"]]]]]])
+      [:li [:a {:href "http://blog.hashobject.com"} "Blog"]]
+      [:li [:a {:href "http://os.hashobject.com"} "Open Source"]]]]]])
 
 (defn footer []
   [:footer.row

@@ -39,6 +39,16 @@ module.exports = function(grunt) {
           gzip: true
         },
         {
+          src: '../resources/public/translate/index.html',
+          dest: 'translate/index.html',
+          gzip: true
+        },
+        {
+          src: '../resources/public/rsa-signer/index.html',
+          dest: 'rsa-signer/index.html',
+          gzip: true
+        },
+        {
           src: '../resources/public/css/app.css',
           dest: 'css/app.css',
           gzip: true
