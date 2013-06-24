@@ -7,7 +7,7 @@
             [os.hashobject.views.project :as project-view]))
 
 
-(def projects ["translate" "sitemap" "rsa-signer"])
+(def projects ["translate" "sitemap" "rsa-signer" "mangopay"])
 
 (defn project-to-clj [project-name]
   (into []

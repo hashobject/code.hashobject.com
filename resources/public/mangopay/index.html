@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html itemscope="" itemtype="http://schema.org/BlogPosting" lang="en"><head><meta charset="utf-8"><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"><meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport"><link href="/css/app.css" rel="stylesheet" type="text/css"><link href="http://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41533076-3', 'hashobject.com');
+  ga('send', 'pageview');</script></head><body><header class="row"><div class="content"><a href="http://os.hashobject.com"><div class="logo"></div></a><nav role="navigation"><ul><li><a href="http://hashobject.com">Home</a></li><li><a href="http://blog.hashobject.com">Blog</a></li><li><a href="http://os.hashobject.com">Open Source</a></li></ul></nav></div></header><div class="row"><div class="content"><article class="docs-content columns large-12"><h1>mangopay</h1><p>A Clojure library for interaction with <a href='http://www.mangopay.com/overview/'>MangoPay REST API</a>.</p><p><h2>Install</h2></p><pre class="brush: shell">
+&#91;mangopay &quot;0.1.0-SNAPSHOT&quot;&#93;
+</pre><h2>Usage</h2><p>Below is an example how create, fetch and modify user.</p><p>All other interactions with MangoPay can be done in absolutely the same way.</p><p>MangoPay API is very consistent. You need just change 1 parameter of each method. So e.x. instead of 'users' just use 'wallets' or 'withdrawals'.</p><p>For details about what properties are required for each entity creation please visit an official API <a href='http://www.mangopay.com/api-references/'>documentation</a>.</p><p><pre class="brush: shell">
+user=&gt; &#40;use 'mangopay.core&#41;
+null
+user=&gt; &#40;create &quot;users&quot;
+        {&quot;FirstName&quot; &quot;Mark&quot;,
+         &quot;LastName&quot; &quot;Zuckerberg&quot;,
+         &quot;Email&quot; &quot;mark@leetchi.com&quot;,
+         &quot;Nationality&quot; &quot;FR&quot;,
+         &quot;Birthday&quot; 1300186358,
+         &quot;PersonType&quot; :NATURAL&#95;PERSON,
+         &quot;Tag&quot; &quot;custom information from the app&quot;}
+        {:partner-id &quot;communist&quot;
+         :host &quot;http://api-preprod.leetchi.com&quot;
+         :rsa-key-path &quot;/Users/podviaznikov/.ssh/mangopay&#95;rsa&quot;}&#41;
+{&quot;LastName&quot; &quot;Zuckerberg&quot;, &quot;IP&quot; nil, &quot;CreationDate&quot; 1371931163, &quot;IsStrongAuthenticated&quot; false, &quot;PersonType&quot; &quot;NATURAL&#95;PERSON&quot;, &quot;PersonalWalletAmount&quot; 0, &quot;UpdateDate&quot; 1371931163, &quot;CanRegisterMeanOfPayment&quot; false, &quot;Tag&quot; &quot;custom information from the app&quot;, &quot;ID&quot; 337252, &quot;FirstName&quot; &quot;Mark&quot;, &quot;Password&quot; &quot;XGB5hY9PAWnWh3ZLi6OwKY0t1Fg6bM&quot;, &quot;Nationality&quot; &quot;FR&quot;, &quot;Email&quot; &quot;mark@leetchi.com&quot;, &quot;HasRegisteredMeansOfPayment&quot; false, &quot;Birthday&quot; 1300186358}
+
+user=&gt; &#40;fetch &quot;users&quot; 337243 {:partner-id &quot;communist&quot;
+         :host &quot;http://api-preprod.leetchi.com&quot;
+         :rsa-key-path &quot;/Users/podviaznikov/.ssh/mangopay&#95;rsa&quot;}&#41;
+{&quot;LastName&quot; &quot;Zuckerberg&quot;, &quot;IP&quot; nil, &quot;CreationDate&quot; 1371931163, &quot;IsStrongAuthenticated&quot; false, &quot;PersonType&quot; &quot;NATURAL&#95;PERSON&quot;, &quot;PersonalWalletAmount&quot; 0, &quot;UpdateDate&quot; 1371931163, &quot;CanRegisterMeanOfPayment&quot; false, &quot;Tag&quot; &quot;custom information from the app&quot;, &quot;ID&quot; 337252, &quot;FirstName&quot; &quot;Mark&quot;, &quot;Password&quot; &quot;XGB5hY9PAWnWh3ZLi6OwKY0t1Fg6bM&quot;, &quot;Nationality&quot; &quot;FR&quot;, &quot;Email&quot; &quot;mark@leetchi.com&quot;, &quot;HasRegisteredMeansOfPayment&quot; false, &quot;Birthday&quot; 1300186358}
+
+user=&gt; &#40;modify &quot;users&quot;
+         337243
+        {&quot;FirstName&quot; &quot;Markus&quot;
+         &quot;Tag&quot; &quot;custom information from the app&quot;}
+        {:partner-id &quot;communist&quot;
+         :host &quot;http://api-preprod.leetchi.com&quot;
+         :rsa-key-path &quot;/Users/podviaznikov/.ssh/mangopay&#95;rsa&quot;}&#41;
+{&quot;LastName&quot; &quot;Zuckerberg&quot;, &quot;IP&quot; nil, &quot;CreationDate&quot; 1371930963, &quot;IsStrongAuthenticated&quot; false, &quot;PersonType&quot; &quot;NATURAL&#95;PERSON&quot;, &quot;PersonalWalletAmount&quot; 0, &quot;UpdateDate&quot; 1371931136, &quot;CanRegisterMeanOfPayment&quot; false, &quot;Tag&quot; &quot;custom information from the app&quot;, &quot;ID&quot; 337243, &quot;FirstName&quot; &quot;Markus&quot;, &quot;Password&quot; &quot;bjA0SDwRphhEinYPv8FFLx6qEP5xPU&quot;, &quot;Nationality&quot; &quot;FR&quot;, &quot;Email&quot; &quot;mark@leetchi.com&quot;, &quot;HasRegisteredMeansOfPayment&quot; false, &quot;Birthday&quot; 1300186358} 
+</pre></p><h2>Docs</h2><p>There are 3 methods:</p><ul><li>(create [route input options])</li><li>(fetch [route id options])</li><li>(modify [route id input options])</li></ul><p>Options has 3 properties:</p><ul><li>:partner-id - your id youshould receive from MangoPay on registration.</li><li>:host - API endpoint. http://api-preprod.leetchi.com for testing and https://api.leetchi.com/v1/partner/ for production.</li><li>:rsa-key-path - path to your private RSA key. Correspoding public key should be submitted to MangoPay on registration.<p></li></ul><h2>Contributions</h2></p><p>We love contributions. Please submit your pull requests.</p><p><h2>License</h2></p><p>Copyright © 2013 HashObject Ltd (team@hashobject.com).</p><p>The use and distribution terms for this software are covered by the <a href='http://opensource.org/licenses/eclipse-1.0'>Eclipse Public License 1.0</a> which can be found in the file epl-v10.html at the root of this distribution.</p><p>By using this software in any fashion, you are agreeing to be bound by the terms of this license.</p><p>You must not remove this notice, or any other, from this software.</p></article></div></div><footer class="row"><div class="content"><p class="licence">Except as otherwise noted, the content of this site is licensed
+     under the <a href='http://creativecommons.org/licenses/by/3.0/'>Creative Commons Attribution 3.0 License</a>,
+     and code samples and library code are licensed under the
+     <a href='http://opensource.org/licenses/eclipse-1.0'>Eclipse Public License 1.0</a>.</p></div></footer></body></html>

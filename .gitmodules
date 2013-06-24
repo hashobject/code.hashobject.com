@@ -7,3 +7,6 @@
 [submodule "rsa-signer"]
 	path = rsa-signer
 	url = git@github.com:hashobject/rsa-signer.git
+[submodule "mangopay"]
+	path = mangopay
+	url = git@github.com:hashobject/mangopay.git
