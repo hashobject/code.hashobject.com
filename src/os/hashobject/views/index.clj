@@ -6,7 +6,8 @@
 
 
 (defn render-project [project]
-  [:li.project (:name project)])
+  [:li.project
+   [:a {:href (:name project)} (:name project)]])
 
 
 (defn index [projects]
