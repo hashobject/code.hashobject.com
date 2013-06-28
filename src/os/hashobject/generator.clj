@@ -54,3 +54,23 @@
     (spit (str "./resources/public/index.html")
           (index-view/index projects))))
 
+
+
+
+
+(defn projects-sitemap-definitions []
+  (let [projects (process-projects)]
+    (for [project projects]
+      {:loc (str "http://os.hashobject.com/" (:name project))
+       :lastmod "2013-06-27"
+       :changefreq "weekly"
+       :priority 0.8})))
+
+(defn generate-sitemap []
+  (let [projects-pages (projects-sitemap-definitions)
+        all-pages (conj projects-pages
+                        {:loc (str "http://os.hashobject.com/")
+                         :lastmod "2013-06-27"
+                         :changefreq "daily"
+                         :priority 1.0})]
+        (sitemap/generate-sitemap-and-save "./resources/public/sitemap.xml" all-pages)))

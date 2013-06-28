@@ -3,6 +3,17 @@
 HashObject team open source corner.
 
 
+## Full deploy
+
+Inside `frontend` directory execute command:
+
+```
+  lein index-html;lein projects-html;lein sitemap-xml; grunt deploy; lein sitemap
+```
+
+This will build all html, sitemap, css and deploy it to S3.
+
+
 ## Content License
 
 Except as otherwise noted, the content of this [site](http://os.hashobject.com)
