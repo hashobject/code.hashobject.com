@@ -10,3 +10,6 @@
 [submodule "mangopay"]
 	path = mangopay
 	url = git@github.com:hashobject/mangopay.git
+[submodule "pygmenter"]
+	path = pygmenter
+	url = git@github.com:hashobject/pygmenter.git

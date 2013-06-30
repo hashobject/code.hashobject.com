@@ -6,7 +6,11 @@
             [os.hashobject.views.project :as project-view]))
 
 
-(def projects ["translate" "sitemap" "rsa-signer" "mangopay"])
+(def projects ["translate"
+               "sitemap"
+               "rsa-signer"
+               "mangopay"
+               "pygmenter"])
 
 
 
