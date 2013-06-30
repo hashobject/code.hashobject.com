@@ -5,14 +5,19 @@
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-41533076-3', 'hashobject.com');
-  ga('send', 'pageview');</script></head><body><header class="row"><div class="content"><a href="http://os.hashobject.com"><div class="logo"></div></a><nav role="navigation"><ul><li><a href="http://hashobject.com">Home</a></li><li><a href="http://blog.hashobject.com">Blog</a></li><li class="active"><a href="http://os.hashobject.com">Open Source</a></li></ul></nav></div></header><div class="row"><div class="content"><article class="docs-content columns large-12"><h1>rsa-signer</h1><p>A Clojure library which has only one method that signs string with RSA private key.</p><p>Library is heavily inspired by this blog <a href='http://nakkaya.com/2012/10/28/public-key-cryptography/'>post</a> on public key cryptography.</p><h2>Install</h2><pre class="brush: shell">
-&#91;rsa-signer &quot;0.1.0&quot;&#93;
-</pre><p><h2>Usage</h2></p><pre class="brush: shell">
-user=&gt; &#40;use 'rsa-signer.core&#41;
-null
-user=&gt; &#40;sign &quot;some-string-to-sign&quot; &quot;/Users/podviaznikov/.ssh/id&#95;rsa&quot; &quot;SHA1withRSA&quot;&#41;
-#&lt;byte&#91;&#93; &#91;B@40914272&gt;
-</pre><p>There are 3 options that you can pass as last parameter(algorithm) to this function:</p><ul><li>RSA - that means that input string will be signed directly with RSA private key.</li><li>SHA1withRSA - that means than input string will be hashed using SHA-1 and than signed with RSA private key.</li><li>SHA256withRSA - that means than input string will be hashed using SHA-1 and than signed with RSA private key.<p></li></ul><h2>Contributions</h2></p><p>We love contributions. Please submit your pull requests.</p><p></p><h2>License</h2><p>Copyright © 2013 HashObject Ltd (team@hashobject.com).</p><p>The use and distribution terms for this software are covered by the <a href='http://opensource.org/licenses/eclipse-1.0'>Eclipse Public License 1.0</a> which can be found in the file epl-v10.html at the root of this distribution.</p><p>By using this software in any fashion, you are agreeing to be bound by the terms of this license.</p><p>You must not remove this notice, or any other, from this software.</p></article></div></div><footer class="row"><div class="content"><p class="licence">Except as otherwise noted, the content of this site is licensed
+  ga('send', 'pageview');</script></head><body><header class="row"><div class="content"><a href="http://os.hashobject.com"><div class="logo"></div></a><nav role="navigation"><ul><li><a href="http://hashobject.com">Home</a></li><li><a href="http://blog.hashobject.com">Blog</a></li><li class="active"><a href="http://os.hashobject.com">Open Source</a></li></ul></nav></div></header><div class="row"><div class="content"><article class="docs-content columns large-12"><h1>rsa-signer</h1><p>A Clojure library which has only one method that signs string with RSA private key.</p><p>Library is heavily inspired by this blog <a href="http://nakkaya.com/2012/10/28/public-key-cryptography/">post</a> on public key cryptography.</p><h2>Install</h2><p><div class="highlight"><pre><span class="p">[</span><span class="n">rsa</span><span class="o">-</span><span class="n">signer</span> <span class="s">&quot;0.1.0&quot;</span><span class="p">]</span>
+</pre></div>
+</p><h2>Usage</h2><p><div class="highlight"><pre><span class="n">user</span><span class="o">=&gt;</span> <span class="p">(</span><span class="n">use</span> <span class="s">&#39;rsa-signer.core)</span>
+<span class="n">null</span>
+<span class="n">user</span><span class="o">=&gt;</span> <span class="p">(</span><span class="n">sign</span> <span class="s">&quot;some-string-to-sign&quot;</span> <span class="s">&quot;/Users/podviaznikov/.ssh/id_rsa&quot;</span> <span class="s">&quot;SHA1withRSA&quot;</span><span class="p">)</span>
+<span class="c">#&lt;byte[] [B@40914272&gt;</span>
+</pre></div>
+</p><p>There are 3 options that you can pass as last parameter(algorithm) to this function:</p>
+<ul>
+  <li>RSA - that means that input string will be signed directly with RSA private key.</li>
+  <li>SHA1withRSA - that means than input string will be hashed using SHA-1 and than signed with RSA private key.</li>
+  <li>SHA256withRSA - that means than input string will be hashed using SHA-1 and than signed with RSA private key.</li>
+</ul><h2>Contributions</h2><p>We love contributions. Please submit your pull requests.</p><h2>License</h2><p>Copyright © 2013 HashObject Ltd (team@hashobject.com).</p><p>The use and distribution terms for this software are covered by the <a href="http://opensource.org/licenses/eclipse-1.0">Eclipse Public License 1.0</a> which can be found in the file epl-v10.html at the root of this distribution.</p><p>By using this software in any fashion, you are agreeing to be bound by the terms of this license.</p><p>You must not remove this notice, or any other, from this software.</p></article></div></div><footer class="row"><div class="content"><p class="licence">Except as otherwise noted, the content of this site is licensed
      under the <a href='http://creativecommons.org/licenses/by/3.0/'>Creative Commons Attribution 3.0 License</a>,
      and code samples and library code are licensed under the
      <a href='http://opensource.org/licenses/eclipse-1.0'>Eclipse Public License 1.0</a>.</p></div></footer></body></html>

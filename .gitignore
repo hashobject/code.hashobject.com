@@ -13,3 +13,4 @@ pom.xml.asc
 frontend/node_modules/
 frontend/grunt-aws.json
 frontend/.DS_Store
+.DS_Store

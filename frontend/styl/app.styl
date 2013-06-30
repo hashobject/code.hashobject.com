@@ -1,6 +1,7 @@
 @import "normalize.min.css"
 @import "foundation.min.css"
 @import "font-awesome.css"
+@import "pygments.css"
 
 
 $text-color = black;
@@ -113,6 +114,7 @@ article.docs-content
   & code
   & pre[class="brush: clojure"]
   & pre[class="brush: shell"]
+  & div.highlight
     font-family: Courier, monospace;
     font-weight: normal;
     color: $code-color;
@@ -120,11 +122,6 @@ article.docs-content
     display: block;
     margin: 15px;
     padding: 10px 15px;
-
-  & pre
-    font-family: Courier, monospace;
-    font-weight: bold;
-    color: $code-color;
 
   & p
     margin-top: 0;

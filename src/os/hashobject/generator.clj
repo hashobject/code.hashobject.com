@@ -1,24 +1,13 @@
 (ns os.hashobject.generator
   (:use clojure.java.io)
-  (:require [markdown.core :as markdown]
-            [endophile.core :as markdown-parser]
-            [sitemap.core :as sitemap]
+  (:require [sitemap.core :as sitemap]
+            [pygdown.core :as py]
             [os.hashobject.views.index :as index-view]
             [os.hashobject.views.project :as project-view]))
 
 
 (def projects ["translate" "sitemap" "rsa-signer" "mangopay"])
 
-(defn project-to-clj [project-name]
-  (into []
-        (markdown-parser/to-clj
-          (markdown-parser/mp
-            (slurp (str "./" project-name "/README.md"))))))
-
-(defn trim-if-not-nil [s]
-  (if (clojure.string/blank? s)
-    s
-    (clojure.string/trim s)))
 
 
 (defn generate-project-html [metadata]
@@ -28,7 +17,7 @@
    (project-view/index metadata (:content metadata))))
 
 (defn original-md-to-html-str [project-name]
-  (markdown/md-to-html-string (slurp (str "./" project-name "/README.md"))))
+  (py/to-html (slurp (str "./" project-name "/README.md"))))
 
 
 (defn process-project [project-name]

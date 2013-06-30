@@ -8,6 +8,7 @@ HashObject team open source corner.
 Inside `frontend` directory execute command:
 
 ```
+  pygmentize -S default -f html > styl/pygments.css
   lein index-html;lein projects-html;lein sitemap-xml; grunt deploy; lein sitemap
 ```
 
