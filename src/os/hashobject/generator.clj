@@ -2,6 +2,7 @@
   (:use clojure.java.io)
   (:require [sitemap.core :as sitemap]
             [pygdown.core :as py]
+            [leiningen.core.project :as lein]
             [os.hashobject.views.index :as index-view]
             [os.hashobject.views.project :as project-view]))
 
@@ -13,6 +14,9 @@
                "pygmenter"])
 
 
+
+(defn get-project-description [project]
+  (:description (lein/read (str "./" project "/project.clj"))))
 
 (defn generate-project-html [metadata]
   (println "generate project html" (:name metadata))
@@ -26,8 +30,10 @@
 
 (defn process-project [project-name]
   (let [metadata {}
+        description (get-project-description project-name)
         content (original-md-to-html-str project-name)]
     (assoc metadata :name project-name
+                    :description description
                     :content content)))
 
 
