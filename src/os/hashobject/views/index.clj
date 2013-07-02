@@ -18,7 +18,7 @@
       [:meta {:http-equiv "X-UA-Compatible" :content "IE=edge,chrome=1"}]
       [:meta {:name "viewport" :content "width=device-width, initial-scale=1.0, user-scalable=no"}]
       [:meta {:itemprop "author" :name "author" :content "HashObject (team@hashobject.com)"}]
-      [:meta {:name "keywords" :itemprop "keywords" :content "hashobject, blog, clojure, development, heroku, amazon route 53, aws"}]
+      [:meta {:name "keywords" :itemprop "keywords" :content "hashobject, open source, clojure, development"}]
       [:meta {:name "description" :itemprop "description" :content "HashObject - software engineering, design and application development"}]
       [:title "HashObject team open source corner"]
       [:link {:rel "shortcut icon" :href "/favicon.ico"}]
