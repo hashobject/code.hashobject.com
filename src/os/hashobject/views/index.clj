@@ -12,7 +12,7 @@
 
 
 (defn index [projects]
-  (html5 {:lang "en" :itemtype "http://schema.org/Site"}
+  (html5 {:lang "en" :itemscope "" :itemtype "http://schema.org/WebPage"}
     [:head
       [:meta {:charset "utf-8"}]
       [:meta {:http-equiv "X-UA-Compatible" :content "IE=edge,chrome=1"}]
@@ -20,7 +20,7 @@
       [:meta {:itemprop "author" :name "author" :content "HashObject (team@hashobject.com)"}]
       [:meta {:name "keywords" :itemprop "keywords" :content "hashobject, open source, clojure, development"}]
       [:meta {:name "description" :itemprop "description" :content "HashObject - software engineering, design and application development"}]
-      [:title "HashObject team open source corner"]
+      [:title {:itemprop "name"} "HashObject team open source corner"]
       [:link {:rel "shortcut icon" :href "/favicon.ico"}]
       [:link {:rel "publisher" :href "https://plus.google.com/118068495795214676039"}]
       (include-css "/css/app.css")

@@ -17,7 +17,7 @@
   [:header.row
    [:div.content
     [:a {:href "http://os.hashobject.com"}[:div.logo]]
-    [:nav {:role "navigation"}
+    [:nav {:role "navigation" :itemprop "breadcrumb"}
      [:ul
       [:li [:a {:href "http://hashobject.com"} "Home"]]
       [:li [:a {:href "http://blog.hashobject.com"} "Blog"]]
