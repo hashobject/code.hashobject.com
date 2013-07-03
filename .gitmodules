@@ -13,3 +13,6 @@
 [submodule "pygmenter"]
 	path = pygmenter
 	url = git@github.com:hashobject/pygmenter.git
+[submodule "lein-sitemap"]
+	path = lein-sitemap
+	url = git@github.com:hashobject/lein-sitemap.git

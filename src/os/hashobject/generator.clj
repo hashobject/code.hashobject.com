@@ -11,7 +11,8 @@
                "sitemap"
                "rsa-signer"
                "mangopay"
-               "pygmenter"])
+               "pygmenter"
+               "lein-sitemap"])
 
 
 
