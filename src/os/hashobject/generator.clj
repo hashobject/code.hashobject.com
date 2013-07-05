@@ -12,7 +12,8 @@
                "rsa-signer"
                "mangopay"
                "pygmenter"
-               "lein-sitemap"])
+               "lein-sitemap"
+               "lein-ping"])
 
 
 
