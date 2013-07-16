@@ -1,5 +1,5 @@
 (defproject os.hashobject.com "0.1.0"
-  :description "HashObject team open source corner."
+  :description "Hashobject team open source corner."
   :url "http://os.hashobject.com"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
