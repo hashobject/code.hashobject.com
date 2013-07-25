@@ -14,6 +14,7 @@
       [:meta {:name "description" :content (:description metadata)}]
       [:link {:rel "shortcut icon" :href "/favicon.ico"}]
       [:link {:rel "publisher" :href "https://plus.google.com/118068495795214676039"}]
+      [:link {:rel "author" :href "humans.txt"}]
       (include-css "/css/app.css")
       (include-css "http://fonts.googleapis.com/css?family=PT+Sans")
       (common/ga)]

@@ -87,6 +87,10 @@ module.exports = function(grunt) {
           dest: 'robots.txt'
         },
         {
+          src: '../resources/public/humans.txt',
+          dest: 'humans.txt'
+        },
+        {
           src: '../resources/public/sitemap.xml',
           dest: 'sitemap.xml'
         },
