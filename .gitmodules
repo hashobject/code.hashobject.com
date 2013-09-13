@@ -19,3 +19,6 @@
 [submodule "lein-ping"]
 	path = lein-ping
 	url = git@github.com:hashobject/lein-ping.git
+[submodule "hashids"]
+	path = hashids
+	url = git@github.com:hashobject/hashids.git

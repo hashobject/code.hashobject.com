@@ -69,6 +69,11 @@ module.exports = function(grunt) {
           gzip: true
         },
         {
+          src: '../resources/public/hashids/index.html',
+          dest: 'hashids/index.html',
+          gzip: true
+        },
+        {
           src: '../resources/public/css/app.css',
           dest: 'css/app.css',
           gzip: true
