@@ -19,7 +19,7 @@
      [:ul.title-area
        [:li.name
         [:h1
-         [:a {:href "http://blog.hashobject.com"}[:div.logo]]]]]
+         [:a {:href "http://os.hashobject.com"}[:div.logo]]]]]
      [:section.top-bar-section
        [:ul.right
         [:li [:a {:href "http://hashobject.com"} "Home"]]
@@ -28,7 +28,7 @@
 
      [:nav.tab-bar.show-for-small
       [:a.left-off-canvas-toggle.menu-icon
-       [:span "HashCorner"]]]
+       [:span "Hashcorner"]]]
      [:a.exit-off-canvas]
      [:aside.left-off-canvas-menu
       [:ul

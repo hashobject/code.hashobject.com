@@ -79,7 +79,7 @@ module.exports = function(grunt) {
           gzip: true
         },
         {
-          src: '../resources/public/js/vendor.css',
+          src: '../resources/public/js/vendor.js',
           dest: 'js/vendor.js',
           gzip: true
         },

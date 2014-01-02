@@ -17,6 +17,29 @@ Inside `frontend` directory execute command:
 
 This will build all html, sitemap, css and deploy it to S3.
 
+## CloudFront invalidation
+
+/
+/index.html
+/css/app.css
+/js/vendor.js
+/translate/
+/translate/index.html
+/hashids/
+/hashids/index.html
+/sitemap/
+/sitemap/index.html
+/rsa-signer/
+/rsa-signer/index.html
+/mangopay/
+/mangopay/index.hmtl
+/pygmenter/
+/pygmenter/index.html
+/lein-sitemap/
+/lein-sitemap/index.html
+/lein-ping/
+/lein-ping/index.html
+
 
 ## Content License
 
