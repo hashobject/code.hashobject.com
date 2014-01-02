@@ -28,7 +28,7 @@
 
      [:nav.tab-bar.show-for-small
       [:a.left-off-canvas-toggle.menu-icon
-       [:span "Hashblog"]]]
+       [:span "HashCorner"]]]
      [:a.exit-off-canvas]
      [:aside.left-off-canvas-menu
       [:ul
@@ -42,6 +42,6 @@
     [:p.licence.small-12.columns "Except as otherwise noted, the content of this site is licensed
      under the <a href='http://creativecommons.org/licenses/by/3.0/'>Creative Commons Attribution 3.0 License</a>,
      and code samples and library code are licensed under the
-     <a href='http://opensource.org/licenses/eclipse-1.0'>Eclipse Public License 1.0</a>."]]
-   (include-js "/js/vendor.js")
-   [:script "$(document).foundation();"])
+     <a href='http://opensource.org/licenses/eclipse-1.0'>Eclipse Public License 1.0</a>."]
+    (include-js "/js/vendor.js")
+    [:script "$(document).foundation();"]])

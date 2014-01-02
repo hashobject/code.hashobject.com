@@ -7,7 +7,7 @@
 
 (defn render-project [project]
   [:li.item
-   [:a {:href (str "/" (:name project) "/")} (:name project)]
+   [:a.title {:href (str "/" (:name project) "/")} (:name project)]
    [:p (:description project)]])
 
 
