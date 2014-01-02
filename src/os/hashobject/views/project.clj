@@ -19,9 +19,10 @@
       (include-css "http://fonts.googleapis.com/css?family=PT+Sans")
       (common/ga)]
     [:body
-     (common/header)
-     [:div.row
-       [:div.content
-        [:article.docs-content.columns.large-12
-          (str content)]]]
-     (common/footer)]))
+      [:div.off-canvas-wrap
+       [:div.inner-wrap
+         (common/header)
+         [:div.row
+            [:article.post.small-12.columns
+              (str content)]]
+         (common/footer)]]]))

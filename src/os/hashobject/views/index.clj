@@ -6,7 +6,7 @@
 
 
 (defn render-project [project]
-  [:li.project
+  [:li.item
    [:a {:href (str "/" (:name project) "/")} (:name project)]
    [:p (:description project)]])
 
@@ -29,10 +29,10 @@
       (common/ga)
      ]
     [:body
-     (common/header)
-     [:div.row
-      [:div.content
-       [:ul.projects.columns.large-12
-        (for [project projects] (render-project project))]]]
-
-     (common/footer)]))
+      [:div.off-canvas-wrap
+       [:div.inner-wrap
+         (common/header)
+         [:div.row
+           [:ul.items.columns.large-12
+            (for [project projects] (render-project project))]]
+         (common/footer)]]]))
