@@ -23,8 +23,8 @@
      [:section.top-bar-section
        [:ul.right
         [:li [:a {:href "http://hashobject.com"} "Home"]]
-        [:li.active [:a {:href "http://blog.hashobject.com"} "Blog"]]
-        [:li [:a {:href "http://os.hashobject.com"} "Open Source"]]]]]
+        [:li [:a {:href "http://blog.hashobject.com"} "Blog"]]
+        [:li.active [:a {:href "http://os.hashobject.com"} "Open Source"]]]]]
 
      [:nav.tab-bar.show-for-small
       [:a.left-off-canvas-toggle.menu-icon
@@ -39,7 +39,7 @@
 
 (defn footer []
   [:footer.row
-    [:p.licence.small-12.columns "Except as otherwise noted, the content of this site is licensed
+    [:p.license.small-12.columns "Except as otherwise noted, the content of this site is licensed
      under the <a href='http://creativecommons.org/licenses/by/3.0/'>Creative Commons Attribution 3.0 License</a>,
      and code samples and library code are licensed under the
      <a href='http://opensource.org/licenses/eclipse-1.0'>Eclipse Public License 1.0</a>."]
