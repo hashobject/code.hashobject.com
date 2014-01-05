@@ -25,6 +25,8 @@ This will build all html, sitemap, css and deploy it to S3.
 /js/vendor.js
 /translate/
 /translate/index.html
+/time-to-read/
+/time-to-read/index.html
 /hashids/
 /hashids/index.html
 /sitemap/
