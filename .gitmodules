@@ -22,3 +22,6 @@
 [submodule "hashids"]
 	path = hashids
 	url = git@github.com:hashobject/hashids.git
+[submodule "time-to-read"]
+	path = time-to-read
+	url = git@github.com:hashobject/time-to-read.git

@@ -8,6 +8,7 @@
 
 
 (def projects ["translate"
+               "time-to-read"
                "hashids"
                "sitemap"
                "rsa-signer"

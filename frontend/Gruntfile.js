@@ -44,6 +44,11 @@ module.exports = function(grunt) {
           gzip: true
         },
         {
+          src: '../resources/public/time-to-read/index.html',
+          dest: 'time-to-read/index.html',
+          gzip: true
+        },
+        {
           src: '../resources/public/rsa-signer/index.html',
           dest: 'rsa-signer/index.html',
           gzip: true
