@@ -2,7 +2,7 @@
 
 Hashobject team open source corner.
 
-[![Dependencies Status](http://jarkeeper.com/hashobject/os.hashobject.com/status.png)](http://jarkeeper.com/hashobject/os.hashobject.com)
+[![Dependencies Status](http://jarkeeper.com/hashobject/os.hashobject.com/status.svg)](http://jarkeeper.com/hashobject/os.hashobject.com)
 
 
 ## Full deploy
@@ -51,6 +51,6 @@ and code samples are licensed under the [Eclipse Public License 1.0](http://open
 
 ## License
 
-Copyright © 2013-2014 Hashobject Ltd (team@hashobject.com).
+Copyright © 2013-2015 Hashobject Ltd (team@hashobject.com).
 
 Distributed under the [Eclipse Public License](http://opensource.org/licenses/eclipse-1.0).
