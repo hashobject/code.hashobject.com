@@ -11,7 +11,7 @@
    [:p (:description project)]])
 
 
-(defn index [projects]
+(defn render [projects]
   (html5 {:lang "en" :itemscope "" :itemtype "http://schema.org/WebPage"}
     [:head
       [:meta {:charset "utf-8"}]
