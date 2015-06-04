@@ -5,6 +5,7 @@
                  [hiccup "1.0.5"]
                  [perun "0.1.0-SNAPSHOT"]
                  [clj-time "0.9.0"]
+                 [pandeiro/boot-http "0.6.2"]
                  [jeluard/boot-notify "0.1.2" :scope "test"]])
 
 (task-options!
@@ -21,6 +22,8 @@
 (require '[io.perun.render :refer :all])
 (require '[io.perun.collection :refer :all])
 
+
+(require '[pandeiro.boot-http :refer :all])
 (require '[jeluard.boot-notify :refer [notify]])
 
 
@@ -39,3 +42,5 @@
         (sitemap :filename "sitemap.xml")
         ;(rss :title "Hashobject" :description "Hashobject open source corner" :link "http://os.hashobject.com")
         (notify)))
+
+

@@ -31,4 +31,14 @@
     [:p.license.small-12.columns "Except as otherwise noted, the content of this site is licensed
      under the <a href='http://creativecommons.org/licenses/by/3.0/'>Creative Commons Attribution 3.0 License</a>,
      and code samples and library code are licensed under the
-     <a href='http://opensource.org/licenses/eclipse-1.0'>Eclipse Public License 1.0</a>."]])
+     <a href='http://opensource.org/licenses/eclipse-1.0'>Eclipse Public License 1.0</a>."]
+    [:script "var btn = document.getElementById('toggle');
+              var nav = document.getElementById('main-nav');
+              btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                if(!nav.classList.contains('open')) {
+                  nav.classList.add('open')
+                } else {
+                  nav.classList.remove('open')
+                }
+              });"]])
