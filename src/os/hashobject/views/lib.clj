@@ -19,10 +19,8 @@
       (include-css "http://fonts.googleapis.com/css?family=PT+Sans")
       (common/ga)]
     [:body
-      [:div.off-canvas-wrap
-       [:div.inner-wrap
-         (common/header)
-         [:div.row
-            [:article.post.small-12.columns
-              (str (:content metadata))]]
-         (common/footer)]]]))
+       (common/header)
+       [:div.row.content
+         [:div.post.small-12.columns
+              (str (:content metadata))]
+         (common/footer)]]))

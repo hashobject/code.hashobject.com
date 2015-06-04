@@ -29,10 +29,8 @@
       (common/ga)
      ]
     [:body
-      [:div.off-canvas-wrap
-       [:div.inner-wrap
-         (common/header)
-         [:div.row
-           [:ul.items.columns.large-12
-            (for [project projects] (render-project project))]]
-         (common/footer)]]]))
+       (common/header)
+       [:div.row.content
+         [:ul.items.columns.small-12
+          (for [project projects] (render-project project))]]
+       (common/footer)]))
