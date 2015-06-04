@@ -1,27 +1,9 @@
-[submodule "sitemap"]
+[submodule "resources/sitemap"]
 	path = resources/sitemap
 	url = git@github.com:hashobject/sitemap.git
-[submodule "translate"]
+[submodule "resources/translate"]
 	path = resources/translate
 	url = git@github.com:hashobject/translate.git
-[submodule "rsa-signer"]
-	path = resources/rsa-signer
-	url = git@github.com:hashobject/rsa-signer.git
-[submodule "mangopay"]
-	path = resources/mangopay
-	url = git@github.com:hashobject/mangopay.git
-[submodule "pygmenter"]
-	path = resources/pygmenter
-	url = git@github.com:hashobject/pygmenter.git
-[submodule "lein-sitemap"]
-	path = resources/lein-sitemap
-	url = git@github.com:hashobject/lein-sitemap.git
-[submodule "lein-ping"]
-	path = resources/lein-ping
-	url = git@github.com:hashobject/lein-ping.git
-[submodule "hashids"]
-	path = resources/hashids
-	url = git@github.com:hashobject/hashids.git
-[submodule "time-to-read"]
+[submodule "resources/time-to-read"]
 	path = resources/time-to-read
 	url = git@github.com:hashobject/time-to-read.git

@@ -1,10 +1,10 @@
-(ns os.hashobject.views.project
+(ns os.hashobject.views.lib
   (:use [hiccup.core :only (html)]
         [hiccup.page :only (html5 include-css include-js)])
   (:require [os.hashobject.views.common :as common]))
 
 
-(defn index [metadata content]
+(defn render [metadata]
   (html5 {:lang "en" :itemscope "" :itemtype "http://schema.org/WebPage"}
     [:head
       [:meta {:charset "utf-8"}]
@@ -24,5 +24,5 @@
          (common/header)
          [:div.row
             [:article.post.small-12.columns
-              (str content)]]
+              (str (:content metadata))]]
          (common/footer)]]]))

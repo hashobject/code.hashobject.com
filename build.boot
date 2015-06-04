@@ -11,9 +11,9 @@
   pom {:project 'os.hashobject.com
        :version "0.2.0"})
 
-(require '[io.perun.markdown :refer :all])
-(require '[io.perun.ttr :refer :all])
-(require '[io.perun.draft :refer :all])
+(require '[os.hashobject.projects :refer :all])
+(require '[os.hashobject.views.index :as index-view])
+(require '[os.hashobject.views.lib :as project-view])
 (require '[io.perun.permalink :refer :all])
 (require '[io.perun.sitemap :refer :all])
 (require '[io.perun.rss :refer :all])
@@ -22,17 +22,20 @@
 
 (require '[jeluard.boot-notify :refer [notify]])
 
-(defn renderer [data] (:name data))
+(defn renderer [data] (prn-str data))
+
+(defn lib-filename
+  "Default implementation for the `create-filename` task option"
+  [file]
+  "index.html")
 
 (deftask build
   "Build site"
   []
-  (comp (markdown)
-        (draft)
-        ;(ttr)
+  (comp (projects)
         (permalink)
-        (render :renderer 'renderer)
-        ;(collection :renderer 'index-view/render :page "index.html" :comparator (fn [i1 i2] (compare i2 i1)))
-        ;(sitemap :filename "sitemap.xml")
+        (render :renderer project-view/render)
+        (collection :renderer index-view/render :page "index.html")
+        (sitemap :filename "sitemap.xml")
         ;(rss :title "Hashobject" :description "Hashobject open source corner" :link "http://os.hashobject.com")
         (notify)))
