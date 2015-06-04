@@ -30,8 +30,3 @@ gulp.task('deploy', function() {
      // print upload updates to console
     .pipe(awspublish.reporter());
 });
-
-var watcher = gulp.watch('src/**/*.*', ['build']);
-watcher.on('change', function(ev) {
-  console.log('File ' + ev.path + ' was ' + ev.type + ', running tasks...');
-});

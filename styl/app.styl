@@ -5,6 +5,7 @@
 
 
 
+
 $blue-light = #1ab7ea
 $pink = #eb4d94
 $pink-dark = #9e0047
@@ -12,7 +13,6 @@ $gray-bg = #eaeced
 $gray-dark = #39434a
 $green-bright = #99ec51
 $dark-bg = #3a434a
-
 
 body
   font-family: 'PT Sans', Tahoma, sans-serif;
@@ -36,6 +36,9 @@ a
 @import "code.styl"
 
 
+.row.content
+  margin-top: 80px;
+
 ul.items
   margin-left: 0;
   & li.item
@@ -45,12 +48,14 @@ ul.items
       text-transform: uppercase;
     & div.item-meta
       font-size: smaller;
+      margin-top: 10px;
       & img
         width: 26px;
         border-radius: 13px;
         margin-right: 13px;
-    & p
-      margin-top: 10px;
+      & .pub-data
+        font-size: 0.8em;
+        display: inline-block;
 
 
 
@@ -69,4 +74,7 @@ ul.items
 
 
 
-
+
+
+
+

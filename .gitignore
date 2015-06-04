@@ -13,3 +13,4 @@ pom.xml.asc
 /node_modules/
 .DS_Store
 aws.json
+.awspublish-os.hashobject.com
