@@ -9,7 +9,8 @@
 
 (task-options!
   pom {:project 'os.hashobject.com
-       :version "0.2.0"})
+       :version "0.2.0"
+       :description "Hashobject team open source corner."})
 
 (require '[os.hashobject.projects :refer :all])
 (require '[os.hashobject.views.index :as index-view])
@@ -22,7 +23,6 @@
 
 (require '[jeluard.boot-notify :refer [notify]])
 
-(defn renderer [data] (prn-str data))
 
 (defn lib-filename
   "Default implementation for the `create-filename` task option"

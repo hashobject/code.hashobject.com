@@ -7,12 +7,10 @@ Hashobject team open source corner.
 
 ## Full deploy
 
-Inside `frontend` directory execute command:
 
 ```
   pygmentize -S default -f html > styl/pygments.css
-  lein index-html;lein projects-html;lein sitemap-xml; nvm use 0.8.26;grunt deploy; lein sitemap
-  nvm use 0.8.26;grunt deploy
+  boot build; gulp deploy
 ```
 
 This will build all html, sitemap, css and deploy it to S3.
