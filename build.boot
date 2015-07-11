@@ -1,13 +1,12 @@
 (set-env!
   :source-paths #{"src"}
   :resource-paths #{"resources"}
-  :dependencies '[[org.clojure/clojure "1.6.0"]
-                  [hiccup "1.0.5"]
-                  [perun "0.1.0-SNAPSHOT"]
+  :dependencies '[[hiccup "1.0.5"]
+                  [perun "0.1.3-SNAPSHOT"]
+                  [hashobject/boot-s3 "0.1.2-SNAPSHOT"]
                   [clj-time "0.9.0"]
-                  [pandeiro/boot-http "0.6.2"]
-                  [hashobject/boot-s3 "0.1.0-SNAPSHOT"]
-                  [jeluard/boot-notify "0.1.2" :scope "test"]])
+                  [pandeiro/boot-http "0.6.3-SNAPSHOT"]
+                  [org.martinklepsch/boot-gzip "0.1.1"]])
 
 (require '[os.hashobject.projects :refer :all])
 (require '[os.hashobject.views.index :as index-view])
@@ -20,7 +19,6 @@
 
 (require '[hashobject.boot-s3 :refer :all])
 (require '[pandeiro.boot-http :refer :all])
-(require '[jeluard.boot-notify :refer [notify]])
 
 
 (task-options!
@@ -34,21 +32,31 @@
     :secret-key (System/getenv "AWS_SECRET_KEY")
     :options {"Cache-Control" "max-age=315360000, no-transform, public"}})
 
-(defn lib-filename
-  "Default implementation for the `create-filename` task option"
-  [file]
-  "index.html")
+
+(deftask build-dev
+  "Build dev version"
+  []
+  (comp (global-metadata)
+        (markdown)
+        (draft)
+        (ttr)
+        (slug)
+        (permalink)
+        (canonical-url)
+        (render :renderer 'os.hashobject.views.lib/render)
+        (collection :renderer 'os.hashobject.views.index/render :page "index.html")))
 
 (deftask build
-  "Build site"
+  "Build prod version."
   []
-  (comp (projects)
-        (permalink)
-        (render :renderer project-view/render)
-        (collection :renderer index-view/render :page "index.html")
+  (comp (build-dev)
         (sitemap :filename "sitemap.xml")
-        ;(rss :title "Hashobject" :description "Hashobject open source corner" :link "http://os.hashobject.com")
-        (s3-sync)
-        (notify)))
+        (rss :title "Hashobject" :description "Hashobject open source corner" :link "http://os.hashobject.com")
+        (gzip :regex [#".html$" #".css$" #".js$"])
+        (s3-sync)))
 
-
+(deftask dev
+  []
+  (comp (watch)
+        (build-dev)
+        (serve :resource-root "public")))
