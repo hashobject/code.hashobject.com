@@ -6,6 +6,7 @@
                   [pygdown "0.1.5"]
                   [hashobject/boot-s3 "0.1.2-SNAPSHOT"]
                   [clj-time "0.11.0"]
+                  [confetti "0.1.0-SNAPSHOT"]
                   [pandeiro/boot-http "0.7.0"]
                   [org.martinklepsch/boot-gzip "0.1.2"]])
 
@@ -15,6 +16,7 @@
          '[pandeiro.boot-http :refer [serve]]
          '[hashobject.boot-s3 :refer :all]
          '[org.martinklepsch.boot-gzip :refer [gzip]]
+         '[confetti.boot-confetti :refer [create-site sync-bucket]]
          '[io.perun.core :as perun]
          '[boot.core :as boot]
          '[boot.util       :as u]
@@ -27,6 +29,12 @@
   pom {:project 'code.hashobject.com
        :version "0.2.0"
        :description "Hashobject team open source corner."}
+  sync-bucket {:creds {
+    :access-key (System/getenv "AWS_ACCESS_KEY")
+    :secret-key (System/getenv "AWS_SECRET_KEY")}}
+  create-site {:creds {
+    :access-key (System/getenv "AWS_ACCESS_KEY")
+    :secret-key (System/getenv "AWS_SECRET_KEY")}}
   s3-sync {
     :bucket "code.hashobject.com"
     :source "resources/public/"
