@@ -60,9 +60,7 @@
       (let [projects-files (map add-filedata
               (->> fileset boot/user-files (boot/by-name ["project.clj"])))
             parsed-files (map #(process-file % fileset) projects-files)]
-        ;(perun/write-to-file datafile content)
         (u/info "Parsed %s projects files\n" (count parsed-files))
-        ;(perun/commit-and-next fileset tmp next-handler)
         (perun/set-meta fileset parsed-files)
         )))
 
