@@ -12,7 +12,7 @@
     [:nav {:role "navigation"}
       [:ul
        [:li [:a {:href "http://hashobject.com"} "Home"]]
-       [:li.active [:a {:href "http://blog.hashobject.com"} "Blog"]]
+       [:li [:a {:href "http://blog.hashobject.com"} "Blog"]]
        [:li [:a {:href "http://code.hashobject.com"} "Code"]]
        [:li [:a {:href "http://labs.hashobject.com"} "Labs"]]]]
     [:p.license.small-12.columns "Except as otherwise noted, the content of this site is licensed

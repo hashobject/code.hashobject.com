@@ -3,8 +3,6 @@
         [hiccup.page :only (html5 include-css include-js)])
   (:require [code.hashobject.views.common :as common]))
 
-
-
 (defn render-project [project]
   [:li.item
    [:a.title {:href (str "/" (:name project) "/")} (:name project)]

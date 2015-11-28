@@ -4,7 +4,7 @@
   :dependencies '[[perun "0.2.1-SNAPSHOT"]
                   [hiccup "1.0.5"]
                   [pygdown "0.1.5"]
-                  [hashobject/boot-s3 "0.1.2-SNAPSHOT"]
+                  ;[hashobject/boot-s3 "0.1.2-SNAPSHOT"]
                   [clj-time "0.11.0"]
                   [confetti "0.1.0-SNAPSHOT"]
                   [pandeiro/boot-http "0.7.0"]
@@ -14,7 +14,7 @@
          '[code.hashobject.views.lib :as lib-view]
          '[code.hashobject.views.index :as index-view]
          '[pandeiro.boot-http :refer [serve]]
-         '[hashobject.boot-s3 :refer :all]
+        ;  '[hashobject.boot-s3 :refer :all]
          '[org.martinklepsch.boot-gzip :refer [gzip]]
          '[confetti.boot-confetti :refer [create-site sync-bucket]]
          '[io.perun.core :as perun]
@@ -35,12 +35,20 @@
   create-site {:creds {
     :access-key (System/getenv "AWS_ACCESS_KEY")
     :secret-key (System/getenv "AWS_SECRET_KEY")}}
-  s3-sync {
-    :bucket "code.hashobject.com"
-    :source "resources/public/"
-    :access-key (System/getenv "AWS_ACCESS_KEY")
-    :secret-key (System/getenv "AWS_SECRET_KEY")
-    :options {"Cache-Control" "max-age=315360000, no-transform, public"}})
+  sync-bucket {
+    ; :dry-run true
+    :bucket "code-hashobject-com-confetti-static-si-sitebucket-1d00u2838ns0u"
+    :creds {
+      :access-key (System/getenv "AWS_ACCESS_KEY")
+      :secret-key (System/getenv "AWS_SECRET_KEY")}
+  }
+  ; s3-sync {
+  ;   :bucket "code.hashobject.com"
+  ;   :source "resources/public/"
+  ;   :access-key (System/getenv "AWS_ACCESS_KEY")
+  ;   :secret-key (System/getenv "AWS_SECRET_KEY")
+  ;   :options {"Cache-Control" "max-age=315360000, no-transform, public"}}
+    )
 
 
 (defn parse-project-file [file]
@@ -65,13 +73,22 @@
   "Parse projects information"
   []
   (boot/with-pre-wrap fileset
-      (let [projects-files (map add-filedata
-              (->> fileset boot/user-files (boot/by-name ["project.clj"])))
-            parsed-files (map #(process-file % fileset) projects-files)]
-        (u/info "Parsed %s projects files\n" (count parsed-files))
-        (perun/set-meta fileset parsed-files)
-        )))
+    (let [projects-files (map add-filedata
+            (->> fileset boot/user-files (boot/by-name ["project.clj"])))
+          parsed-files (map #(process-file % fileset) projects-files)]
+      (u/info "Parsed %s projects files\n" (count parsed-files))
+      (perun/set-meta fileset parsed-files))))
 
+
+(deftask deploy []
+  (comp
+    ; (sift :move {#"^sitemap/" "public/sitemap/"
+    ;                 #"^time-to-read/" "public/time-to-read/"
+    ;                 #"^translate/" "public/translate/"})
+        (sift :include #{#"^public/"})
+        (sift :move {#"^public/" ""})
+        (sync-bucket)
+    ))
 
 (deftask build-dev
   "Build dev version"
@@ -88,14 +105,15 @@
         ))
 
 (deftask build
-  "Build prod version."
+  "Build prod version"
   []
   (comp (build-dev)
-        (inject-scripts :scripts #{"ga.js"})
-        (sitemap :filename "sitemap.xml")
-        (rss :title "Hashobject" :description "Hashobject open source corner" :link "http://code.hashobject.com")
-        (gzip :regex [#".html$" #".css$" #".js$"])
-        (s3-sync)))
+        ;(inject-scripts :scripts #{"ga.js"})
+        ;(sitemap :filename "sitemap.xml")
+        ;(rss :title "Hashobject" :description "Hashobject open source corner" :link "http://code.hashobject.com")
+        ;(gzip :regex [#".html$" #".css$" #".js$"])
+        (deploy)
+        ))
 
 (deftask dev
   []
