@@ -83,6 +83,7 @@
   "Build prod version."
   []
   (comp (build-dev)
+        (inject-scripts :scripts #{"ga.js"})
         (sitemap :filename "sitemap.xml")
         (rss :title "Hashobject" :description "Hashobject open source corner" :link "http://code.hashobject.com")
         (gzip :regex [#".html$" #".css$" #".js$"])
