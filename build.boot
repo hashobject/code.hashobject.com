@@ -4,7 +4,6 @@
   :dependencies '[[perun "0.2.1-SNAPSHOT"]
                   [hiccup "1.0.5"]
                   [pygdown "0.1.5"]
-                  ;[hashobject/boot-s3 "0.1.2-SNAPSHOT"]
                   [clj-time "0.11.0"]
                   [confetti "0.1.0-SNAPSHOT"]
                   [pandeiro/boot-http "0.7.0"]
@@ -14,7 +13,6 @@
          '[code.hashobject.views.lib :as lib-view]
          '[code.hashobject.views.index :as index-view]
          '[pandeiro.boot-http :refer [serve]]
-        ;  '[hashobject.boot-s3 :refer :all]
          '[org.martinklepsch.boot-gzip :refer [gzip]]
          '[confetti.boot-confetti :refer [create-site sync-bucket]]
          '[io.perun.core :as perun]
@@ -41,14 +39,7 @@
     :creds {
       :access-key (System/getenv "AWS_ACCESS_KEY")
       :secret-key (System/getenv "AWS_SECRET_KEY")}
-  }
-  ; s3-sync {
-  ;   :bucket "code.hashobject.com"
-  ;   :source "resources/public/"
-  ;   :access-key (System/getenv "AWS_ACCESS_KEY")
-  ;   :secret-key (System/getenv "AWS_SECRET_KEY")
-  ;   :options {"Cache-Control" "max-age=315360000, no-transform, public"}}
-    )
+  })
 
 
 (defn parse-project-file [file]
