@@ -1,7 +1,7 @@
-(ns os.hashobject.views.index
+(ns code.hashobject.views.index
   (:use [hiccup.core :only (html)]
         [hiccup.page :only (html5 include-css include-js)])
-  (:require [os.hashobject.views.common :as common]))
+  (:require [code.hashobject.views.common :as common]))
 
 
 
@@ -11,7 +11,7 @@
    [:p (:description project)]])
 
 
-(defn render [projects]
+(defn render [{metadata :meta projects :entries}]
   (html5 {:lang "en" :itemscope "" :itemtype "http://schema.org/WebPage"}
     [:head
       [:meta {:charset "utf-8"}]

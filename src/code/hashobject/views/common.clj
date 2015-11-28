@@ -1,4 +1,4 @@
-(ns os.hashobject.views.common
+(ns code.hashobject.views.common
   (:use [hiccup.core :only (html)]
         [hiccup.page :only (html5 include-css include-js)]))
 
@@ -22,7 +22,7 @@
        [:ul
         [:li [:a {:href "http://hashobject.com"} "Home"]]
         [:li [:a {:href "http://blog.hashobject.com"} "Blog"]]
-        [:li.active [:a {:href "http://os.hashobject.com"} "Open Source"]]
+        [:li.active [:a {:href "http://code.hashobject.com"} "Code"]]
         [:li [:a {:href "http://labs.hashobject.com"} "Labs"]]]]])
 
 
