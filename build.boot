@@ -73,13 +73,9 @@
 
 (deftask deploy []
   (comp
-    ; (sift :move {#"^sitemap/" "public/sitemap/"
-    ;                 #"^time-to-read/" "public/time-to-read/"
-    ;                 #"^translate/" "public/translate/"})
-        (sift :include #{#"^public/"})
-        (sift :move {#"^public/" ""})
-        (sync-bucket)
-    ))
+      (sift :include #{#"^public/"})
+      (sift :move {#"^public/" ""})
+      (sync-bucket)))
 
 (deftask build-dev
   "Build dev version"
@@ -99,12 +95,11 @@
   "Build prod version"
   []
   (comp (build-dev)
-        ;(inject-scripts :scripts #{"ga.js"})
-        ;(sitemap :filename "sitemap.xml")
+        (inject-scripts :scripts #{"ga.js"})
+        (sitemap :filename "sitemap.xml")
         ;(rss :title "Hashobject" :description "Hashobject open source corner" :link "http://code.hashobject.com")
-        ;(gzip :regex [#".html$" #".css$" #".js$"])
-        (deploy)
-        ))
+        (gzip :regex [#".html$" #".css$" #".js$"])
+        (deploy)))
 
 (deftask dev
   []
