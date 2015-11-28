@@ -1,8 +1,8 @@
-# os.hashobject.com
+# code.hashobject.com
 
 Hashobject team open source corner.
 
-[![Dependencies Status](http://jarkeeper.com/hashobject/os.hashobject.com/status.svg)](http://jarkeeper.com/hashobject/os.hashobject.com)
+[![Dependencies Status](http://jarkeeper.com/hashobject/code.hashobject.com/status.svg)](http://jarkeeper.com/hashobject/code.hashobject.com)
 
 
 ## Full deploy
